@@ -61,9 +61,9 @@ public class Titulo extends JPanel {
         // COLOR NEGRO
         JMenuItem color_negro = new JMenuItem("Negro");
         color_negro.addActionListener(new EColorNegro());
-        // COLOR AMARILLO
-        JMenuItem color_amarillo = new JMenuItem("Amarillo");
-        color_amarillo.addActionListener(new EColorAmarillo());
+        // COLOR BLANCO
+        JMenuItem color_blanco = new JMenuItem("Blanco");
+        color_blanco.addActionListener(new EColorBlanco());
         // COLOR GRIS 
         JMenuItem color_gris = new JMenuItem("Gris");
         color_gris.addActionListener(new EColorGris());
@@ -74,7 +74,7 @@ public class Titulo extends JPanel {
         color_barcos.add(color_rosa);
         color_barcos.add(color_verde);
         color_barcos.add(color_negro);
-        color_barcos.add(color_amarillo);
+        color_barcos.add(color_blanco);
         color_barcos.add(color_gris);
         menu.add(color_barcos);
         barra.add(menu);

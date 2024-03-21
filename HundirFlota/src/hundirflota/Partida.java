@@ -17,7 +17,9 @@ public class Partida {
     private static int[] barcoColocado = new int[5];
     private static int bucle = 1;
     
-  
+  public static void mostrarResultado(String ganador) {
+        JOptionPane.showMessageDialog(null, "El ganador es: " + ganador, "Partida Finalizada", JOptionPane.INFORMATION_MESSAGE);
+    }
 
     /**
      * Main del proyecto
@@ -217,6 +219,7 @@ public class Partida {
             }
             if (tableroCPU.botones[x].getTocado()) {
                 contador2++;
+                 
             }
         }
 
@@ -227,6 +230,7 @@ public class Partida {
             texto.setForeground(Color.GREEN);
             texto.setTexto("HAS GANADO!!!!");
             bucle = 0;
+           mostrarResultado("Jugador");
         }
 
         if (contador1 != contador2) {
@@ -239,7 +243,9 @@ public class Partida {
             for (int x = 0; x < 100; x++) {
                 if (tableroJugador.botones[x].getActivo()) {
                     contador1++;
+                    
                 }
+                
                 if (tableroJugador.botones[x].getHundido()) {
                     contador2++;
                 }
@@ -248,9 +254,16 @@ public class Partida {
                 texto.setForeground(Color.RED);
                 bucle = 0;
                 texto.setTexto("HAS PERDIDO!!!!");
+                mostrarResultado("CPU");
             } else {
                 texto.setTexto("CPU ha atacado. Es tu turno.");
+                
+                if (tableroJugador.botones[aleatorio].getActivo()) {
+            VentanaMisil.mostrarVentanaImpacto();
+        }
             }
+            
+            
         }
     }
 
